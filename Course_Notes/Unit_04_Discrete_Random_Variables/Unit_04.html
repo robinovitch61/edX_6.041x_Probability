@@ -11773,7 +11773,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
@@ -11818,15 +11818,15 @@ div#notebook {
 </li>
 <li><p>Possible for a given probabilistic experiment to have multiple associated random variables (e.g. weight W, height H, etc.)</p>
 <ul>
-<li>Create new random variable based off other random variables, e.g. $BMI = B = \frac{W}{H^2}$ (still a function of outcomes)  </li>
+<li>Create new random variable based off other random variables, e.g. $BMI = B = \frac{W}{H^2}$ (still a function of outcomes)<br><br></li>
 </ul>
 </li>
 <li><p>Random variables are functions mapping $\Omega$ to real numbers (discrete or continuous values)</p>
 <ul>
-<li>Meaning of $X + Y$: random variable takes value $x + y$, where X takes value x and Y takes value y given some outcome  </li>
+<li>Meaning of $X + Y$: random variable takes value $x + y$, where X takes value x and Y takes value y given some outcome)<br><br></li>
 </ul>
 </li>
-<li><p>Since some of the outcomes of a probabilistic experiment are more likely than others, the associated numerical values of random variables will be more likely than others</p>
+<li><p>Since some of the outcomes of a probabilistic experiment are more likely than others, the associated numerical values of random variables will be more likely than others)<br><br></p>
 </li>
 </ul>
 </li>
@@ -11836,14 +11836,14 @@ div#notebook {
 <ul>
 <li><p>Define the y-axis of a PMF for random variable X, $p_X(x) = P(X=x) = P(\{\omega \in \Omega\ such\ that\ X(\omega)=x\})$</p>
 <ul>
-<li>$PMF = f(x)$, where for any x, the PMF specifies the probability that the random variable X takes on this particular value x  </li>
+<li>$PMF = f(x)$, where for any x, the PMF specifies the probability that the random variable X takes on this particular value x)<br><br></li>
 </ul>
 </li>
 <li><p>Properties:</p>
 <ul>
-<li><p>$p_X(x) \geq 0$ (like any probability)</p>
+<li><p>$p_X(x) \geq 0$ (like any probability)<br><br></p>
 </li>
-<li><p>$\sum\limits_{x}p_X(x)=1$</p>
+<li><p>$\sum\limits_{x}p_X(x)=1$)</p>
 </li>
 </ul>
 </li>
@@ -11856,7 +11856,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;l4_1.png&#39;</span><span class="p">,</span> <span class="n">embed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">120</span><span class="p">))</span>
@@ -13103,7 +13103,7 @@ width=120
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;l4_2.png&#39;</span><span class="p">,</span> <span class="n">embed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">))</span>
@@ -13565,6 +13565,70 @@ width=200
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><br></p>
+<ul>
+<li><p><strong>Random Variable Example 1: Bernoulli with Parameter $\mathbf{p \in [0,1]}$</strong>: models trial resulting in success/failure (e.g. coin, yes/no, 0 or 1 etc.)</p>
+<ul>
+<li>X = 1 with probability $p$</li>
+<li>X = 0 with probability $1 - p$</li>
+<li>PMF is simply two bars: at x = 0, height $p$, and at x = 1 height $1-p$<br><br><br></li>
+</ul>
+</li>
+<li><p><strong>Indicator Variables:</strong> Bernoulli random variables that allow us to translate manipulations of events into manipulations of random variables</p>
+<ul>
+<li>E.g. sample space is split into $A$ and $A^c$.<ul>
+<li>For indicator variable $I_A \to P_{I_A}(1) = P(I_A = 1) = P(A)$<br><br></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Discrete Uniform Random Variables:</strong></p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;l4_3.png&#39;</span><span class="p">,</span> <span class="n">embed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-ab4061443d03&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>display<span class="ansi-blue-fg">(</span>Image<span class="ansi-blue-fg">(</span>filename<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;l4_3.png&#39;</span><span class="ansi-blue-fg">,</span> embed<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">,</span> width<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">200</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;Image&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="Lecture-5,-6,-and-7-Exercises:">Lecture 5, 6, and 7 Exercises:<a class="anchor-link" href="#Lecture-5,-6,-and-7-Exercises:">&#182;</a></h2><p>Currently unavailable in archived course.</p>
 
@@ -13601,7 +13665,7 @@ width=200
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert Unit_04.ipynb --to html
