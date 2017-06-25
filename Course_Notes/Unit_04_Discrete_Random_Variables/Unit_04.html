@@ -11779,7 +11779,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[1]:</div>
+<div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -16079,7 +16079,7 @@ width=800
 <ul>
 <li>Recall $p_X(1) = p$ and $p_X(0) = 1-p$
 <br><br></li>
-<li>As such, $E[x] = 1p + 0(1-p) = p$<ul>
+<li>As such, $E[x] = 1p + 0(1-p) = p \to \mathbf{E[X] = p}$<ul>
 <li>If $X$ is indicator variable $X = I_A$ (i.e. $X = 1$ if A occurs, $X=0$ otherwise, such that $p = P(A)$) $\to E[I_A] = P(A)$ 
 <br><br></li>
 </ul>
@@ -16882,7 +16882,7 @@ width=300
 <li>$p_X(x) = P(X=x)$ <br><br></li>
 <li>$\sum\limits_{x}p_X(x) = 1$ <br><br></li>
 <li>$E[X] = \sum\limits_{x}xp_X(x)$ <br><br></li>
-<li>$E[g(X)] = \sum\limits_{x}g(x)p_X(x)$ <br><br></li>
+<li>Expected Value Rule: $E[g(X)] = \sum\limits_{x}g(x)p_X(x)$ <br><br></li>
 <li>$var(X) = \sum\limits_{x}(x-E[X])^2p_X(x) = E[X^2] - (E[X])^2$
 <br><br></li>
 </ul>
@@ -16891,7 +16891,7 @@ width=300
 <li>$p_{X|A}(x) = P(X = x|A)$ <br><br></li>
 <li>$\sum\limits_{x}p_{X|A}(x) = 1$ <br><br></li>
 <li>$E[X|A] = \sum\limits_{x}xp_{X|A}(x)$ <br><br></li>
-<li>$E[g(X)|A] = \sum\limits_{x}g(x)p_{X|A}(x)$ <br><br></li>
+<li>Expected Value Rule: $E[g(X)|A] = \sum\limits_{x}g(x)p_{X|A}(x)$ <br><br></li>
 <li>$var(X|A) = \sum\limits_{x}(x-E[X|A])^2p_{X|A}(x) = E[X^2|A] - (E[X|A])^2$
 <br><br></li>
 </ul>
@@ -16901,7 +16901,7 @@ width=300
 <ul>
 <li>Recall Total Probability Theorem: $P(B) = P(A_1)P(B|A_1)+...+P(A_n)P(B|A_n)$</li>
 <li>If $B = \{X = x\}$:<ul>
-<li>$p_X(x) = P(A_1)P_{X|A_1}(x)+...+P(A_n)p_{X|A_n}(x) \to$ Total Probability Theorem translated to PMF notation
+<li>$p_X(x) = P(A_1)p_{X|A_1}(x)+...+P(A_n)p_{X|A_n}(x) \to$ Total Probability Theorem translated to PMF notation
 <br><br></li>
 </ul>
 </li>
@@ -18044,12 +18044,113 @@ width=300
 <br><br></li>
 </ul>
 </li>
-<li>Therefore, $\mathbf{E[X] = np}$ for Bernoulli random variable
+<li>Therefore, $\mathbf{E[X] = np}$ for Binomial random variable
 <br><br></li>
 </ul>
-<p><strong>Conditional PMFs:</strong></p>
+<p><strong>Conditional PMFs Based on Other Random Variables:</strong> $A = \{Y=y\}$</p>
 <ul>
-<li>Notes TBD</li>
+<li>Already seen conditioning PMF of random variable $X$ on event A: $p_{X|A}(x|A) = P(X=x|A)$
+<br><br></li>
+<li>What if A is event that some other random variable takes a value? $\to A = \{Y=y\}$<ul>
+<li>$p_{X|Y}(x|y) = P(X=x|Y=y) = \frac{P(X=x\  \cap\  Y=y)}{P(Y=y)}$
+<br><br></li>
+</ul>
+</li>
+<li>This leads to definition of conditioning on another random variable: $\mathbf{p_{X|Y}(x|y) = \frac{p_{X|Y}(x,y)}{p_Y(y)}}$, defined for $y$ where $p_Y(y) &gt; 0$<ul>
+<li>Note that $\sum\limits_{x}P_{X|Y}(x|y) = 1$
+<br><br></li>
+<li>Also leads to $p_{X|Y}(x,y) = p_Y(y)p_{X|Y}(x|y)$ and similarly, $p_{X|Y}(x,y) = p_X(x)p_{Y|X}(y|x)$
+<br><br></li>
+</ul>
+</li>
+<li>Similar forms for more than 2 random variables (can condition on one or more random variables)
+<br><br></li>
+<li>Previously:
+<br><br><ul>
+<li>Multiplication Rule: $P(A \cap B \cap C) = P(A)P(B|A)P(C|A \cap B)$
+<br><br></li>
+<li>Conditional Expecation: $E[X|A] = \sum\limits_{x}xp_{X|A}(x)$
+<br><br></li>
+<li>Expected Value Rule: $E[g(X)|A] = \sum\limits_{x}g(x)p_{X|A}(x)$
+<br><br></li>
+<li>Total Probability Theorem: $p_X(x) = P(A_1)p_{X|A_1}(x)+...+P(A_n)p_{X|A_n}(x)$<ul>
+<li>Given that $\Omega$ partitioned into $A_1, A_2,...,A_n$
+<br><br></li>
+</ul>
+</li>
+<li>Total Expectation Theorem: $E[X] = \sum\limits_{i}P(A_i)E[X|A_i]$<ul>
+<li>Given that $\Omega$ partitioned into $A_1, A_2,...,A_n$
+<br><br></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Conditioning on $A = \{Y=y\}$
+<br><br><ul>
+<li>Multiplication Rule: if $A = \{X=x\}$, $B = \{Y=y\}$, $C = \{Z=z\} \to p_{X,Y,Z}(x,y,z) = p_X(x) p_{Y|X}(y|x)p_{Z|X,Y}(z|x,y)$
+<br><br></li>
+<li>Conditional Expectation: $E[X|Y=y] = \sum\limits_{x}xp_{X|Y}(x,y)$
+<br><br></li>
+<li>Expected Value Rule: $E[g(X)|Y=y] = \sum\limits_{x}g(x)p_{X|Y}(x|y)$
+<br><br></li>
+<li>Total Probability Theorem: $p_X(x) = \sum\limits_{y}p_Y(y)p_{X|Y}(x|y)$<ul>
+<li>Given that $\Omega$ partitioned into $A_1, A_2,...,A_n$, with $Y = \{y_1,...,y_n\}$ and $A_i = \{Y=y_i\}$ 
+<br><br></li>
+</ul>
+</li>
+<li>Total Expectation Theorem: $E[X] = \sum\limits_{y}p_Y(y)E[X|Y=y]$<ul>
+<li>Given that $\Omega$ partitioned into $A_1, A_2,...,A_n$, with $Y = \{y_1,...,y_n\}$ and $A_i = \{Y=y_i\}$ 
+<br><br></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Independence of Random Variables:</strong></p>
+<ul>
+<li>Recall independence of 2 events: $P(A \cap B) = P(A)P(B)$ and $P(A|B) = P(A)$
+<br><br></li>
+<li>Independence of a Random Variable and some event A: $P(X = x \cap A) = P(X=x)P(A)$ for all x<ul>
+<li>PMF of X does not change given A: $p_{X|A}(x) = p_X(x)$ for all x, and by symmetry $P(A|X=x) = P(A)$ for all x
+<br><br></li>
+</ul>
+</li>
+<li>For independence of Two Random Variables: $P(X = x \cap Y = y) = P(X=x) P(Y=y)$ for all $x, y$<ul>
+<li>Formally, $p_{X,Y}(x,y) = p_X(x)p_Y(y)$ for all $x,y$
+<br><br></li>
+<li>Can say $p_{X|Y}(x|y) = p_X(x)$ and $p_{Y|X}(y|x) = p_Y(y)$
+<br><br></li>
+<li>Extends to $n$ random variables
+<br><br></li>
+</ul>
+</li>
+</ul>
+<p><strong>Independence and Expectation:</strong></p>
+<ul>
+<li>If $X$ and $Y$ are independent: $E[XY] = E[X]E[Y]$
+<br><br></li>
+<li>Additionally, if $g(X)$ and $h(Y)$ are also independent: $E[g(X)h(Y)] = E[g(X)]E[h(Y)]$<ul>
+<li>Can prove these with Expected Value Rule for Joint PMFs
+<br><br></li>
+</ul>
+</li>
+</ul>
+<p><strong>Independence and Variance:</strong></p>
+<ul>
+<li>Recall that $var(aX) = a^2var(X)$ and $var(X+a) = var(X)$, and these are always true
+<br><br></li>
+<li>If $X$ and $Y$ independent, $\mathbf{var(X+Y) = var(X) + var(Y)} \to$ NOT true generally
+<br><br></li>
+</ul>
+<p><strong>Variance of Binomial Random Variable:</strong> $X$: number of successes in $n$ independant trials with $P(success) = p$</p>
+<ul>
+<li>Break $X$ into $X = X_1 + X_2+...+X_n$, where $X_i = 1$ if $i$'th trial is success, $X_i = 0$ otherwise
+<br><br></li>
+<li>Now, $var(X) = var(X_1)+...+var(X_n) = n*var(X_i)$ by independence of indicator variables $X_i$
+<br><br></li>
+<li>Each indicator variable $X_i$ is Bernoulli variable with $var(X_i) = p(1=p)$
+<br><br></li>
+<li>As such, $\mathbf{var(X) = np(1-p)}$</li>
 </ul>
 
 </div>
@@ -18106,7 +18207,7 @@ width=300
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[NbConvertApp] Converting notebook Unit_04.ipynb to html
-[NbConvertApp] Writing 623334 bytes to Unit_04.html
+[NbConvertApp] Writing 703191 bytes to Unit_04.html
 </pre>
 </div>
 </div>
