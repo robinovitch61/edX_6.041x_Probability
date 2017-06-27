@@ -11779,7 +11779,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -11787,6 +11787,10 @@ div#notebook {
 <style>
 .output {
     align-items: center;
+}
+
+.text_cell_render { /* Customize text cells */
+line-height:2.5em;
 }
 </style>
 </div>
@@ -11850,7 +11854,7 @@ div#notebook {
 </li>
 <li><p>Properties:</p>
 <ul>
-<li><p>$p_X(x) \geq 0$ (like any probability)<br><br></p>
+<li><p>$p_X(x) \geq 0$ (like any probability)</p>
 </li>
 <li><p>$\sum\limits_{x}p_X(x)=1$</p>
 </li>
@@ -16063,11 +16067,14 @@ width=800
 </li>
 <li>Generally, $\mathbf{E[X] = \sum\limits_{x}xp_X(x)}$</li>
 <li>Assumption: for infinite sums, $E[X] = \sum\limits_{x}|x|p_X(x)&lt;\infty$ (infinite sum well defined)</li>
-<li>Average of a population: e.g. n students, weight of i'th student is $x_i$<ul>
-<li>If all equally likely to be chosen and $x_i$'s are distinct: $E[X] = \sum\limits_{i}x_i\frac{1}{n} = \frac{1}{n}\sum\limits_{i}x_i$</li>
+<li><p>Average of a population: e.g. n students, weight of i'th student is $x_i$</p>
+<ul>
+<li>If all equally likely to be chosen and $x_i$'s are distinct: $E[X] = \sum\limits_{i}x_i\frac{1}{n} = \frac{1}{n}\sum\limits_{i}x_i$
+<br><br></li>
 </ul>
 </li>
-<li>Properties:<ul>
+<li><p>Properties:</p>
+<ul>
 <li>If for all $\omega, \ X(\omega) \geq 0$, that is, $X \geq 0$, then $E[X] \geq 0$</li>
 <li>If $a \leq X \leq b$, then $a \leq E[X] \leq b$</li>
 <li>For a constant c, $E[c] = c$
@@ -16077,8 +16084,7 @@ width=800
 </ul>
 <p><strong>Expectation of Bernoulli Random Variable:</strong></p>
 <ul>
-<li>Recall $p_X(1) = p$ and $p_X(0) = 1-p$
-<br><br></li>
+<li>Recall $p_X(1) = p$ and $p_X(0) = 1-p$</li>
 <li>As such, $E[x] = 1p + 0(1-p) = p \to \mathbf{E[X] = p}$<ul>
 <li>If $X$ is indicator variable $X = I_A$ (i.e. $X = 1$ if A occurs, $X=0$ otherwise, such that $p = P(A)$) $\to E[I_A] = P(A)$ 
 <br><br></li>
@@ -16879,19 +16885,19 @@ width=300
 <p><strong>Conditional PMF and Expectation:</strong></p>
 <ul>
 <li>Up to now:<ul>
-<li>$p_X(x) = P(X=x)$ <br><br></li>
-<li>$\sum\limits_{x}p_X(x) = 1$ <br><br></li>
-<li>$E[X] = \sum\limits_{x}xp_X(x)$ <br><br></li>
-<li>Expected Value Rule: $E[g(X)] = \sum\limits_{x}g(x)p_X(x)$ <br><br></li>
+<li>$p_X(x) = P(X=x)$</li>
+<li>$\sum\limits_{x}p_X(x) = 1$</li>
+<li>$E[X] = \sum\limits_{x}xp_X(x)$</li>
+<li>Expected Value Rule: $E[g(X)] = \sum\limits_{x}g(x)p_X(x)$</li>
 <li>$var(X) = \sum\limits_{x}(x-E[X])^2p_X(x) = E[X^2] - (E[X])^2$
 <br><br></li>
 </ul>
 </li>
 <li>Conditioning on some event A (event A is known to have occured and $P(A) &gt; 0$) <ul>
-<li>$p_{X|A}(x) = P(X = x|A)$ <br><br></li>
-<li>$\sum\limits_{x}p_{X|A}(x) = 1$ <br><br></li>
-<li>$E[X|A] = \sum\limits_{x}xp_{X|A}(x)$ <br><br></li>
-<li>Expected Value Rule: $E[g(X)|A] = \sum\limits_{x}g(x)p_{X|A}(x)$ <br><br></li>
+<li>$p_{X|A}(x) = P(X = x|A)$</li>
+<li>$\sum\limits_{x}p_{X|A}(x) = 1$</li>
+<li>$E[X|A] = \sum\limits_{x}xp_{X|A}(x)$</li>
+<li>Expected Value Rule: $E[g(X)|A] = \sum\limits_{x}g(x)p_{X|A}(x)$</li>
 <li>$var(X|A) = \sum\limits_{x}(x-E[X|A])^2p_{X|A}(x) = E[X^2|A] - (E[X|A])^2$
 <br><br></li>
 </ul>
@@ -17266,18 +17272,15 @@ width=400
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>"Memorylessness": number of remaining tosses, conditioned on T in first toss, is still geometric with parameter $p$<ul>
-<li>$p_{X-n|X&gt;n}(k) = P(X-n=k|X&gt;n) = P(T_2T_3T_4....H_{k+1}|T_1) = P(T_2T_3T_4....H_{k+1}) = p_X(k)$
-<br><br></li>
+<li>$p_{X-n|X&gt;n}(k) = P(X-n=k|X&gt;n) = P(T_2T_3T_4....H_{k+1}|T_1) = P(T_2T_3T_4....H_{k+1}) = p_X(k)$</li>
 <li>Bottom line: $\mathbf{p_X(k) = p_{X-n|X&gt;n}(k)}$, and as such, $\mathbf{E[X-n|X&gt;n] = E[X]}$
 <br><br></li>
 </ul>
 </li>
 <li>Useful for calculating expectation of geometric distribution:<ul>
-<li>$E[X] = \sum\limits_{k=1}^\infty k p_X(k) = \sum\limits_{k=1}^\infty k (1-p)^{k-1}p$ is hard to compute!
-<br><br></li>
+<li>$E[X] = \sum\limits_{k=1}^\infty k p_X(k) = \sum\limits_{k=1}^\infty k (1-p)^{k-1}p$ is hard to compute!</li>
 <li>Instead: $E[X] = 1 + E[X-1]$ (by linearity of expectations)<ul>
-<li>$E[X] = 1 + E[X-1] = 1 + pE[X-1|X=1] + (1-p)E[X-1|X&gt;1]$ by Total Expectation Theorem
-<br><br></li>
+<li>$E[X] = 1 + E[X-1] = 1 + pE[X-1|X=1] + (1-p)E[X-1|X&gt;1]$ by Total Expectation Theorem</li>
 <li>$E[X] = 1 + 0 + (1-p)E[X]$
 <br><br></li>
 </ul>
@@ -17295,11 +17298,11 @@ width=400
 </ul>
 </li>
 <li>Joint PMF: $p_{X,Y}(x,y) = P(X = x\ and\ Y = y)$ <ul>
-<li>Function of 2 arguments $f(x,y)$
+<li>Function of 2 arguments $f(x,y)$</li>
+<li>$\sum\limits_{x}\sum\limits_{y}p_{X,Y}(x,y) = 1$
 <br><br></li>
 </ul>
 </li>
-<li>$\sum\limits_{x}\sum\limits_{y}p_{X,Y}(x,y) = 1$</li>
 </ul>
 
 </div>
@@ -17999,12 +18002,9 @@ width=300
 </li>
 <li>With joint PMF, we see that $P(X = Y)$ is sum of diagonal probabilities x = y!</li>
 <li>Can have more than 2 variables:<ul>
-<li>$p_{X,Y,Z}(x,y,z) = P(X = x\ and\ Y = y\ and\ Z = z)$
-<br><br></li>
-<li>$\sum\limits_{x}\sum\limits_{y}\sum\limits_{z}p_{X,Y,Y}(x,y,z) = 1$
-<br><br></li>
-<li>$p_X(x) = \sum\limits_{y}\sum\limits_{z}p_{X,Y,Y}(x,y,z)$
-<br><br></li>
+<li>$p_{X,Y,Z}(x,y,z) = P(X = x\ and\ Y = y\ and\ Z = z)$</li>
+<li>$\sum\limits_{x}\sum\limits_{y}\sum\limits_{z}p_{X,Y,Y}(x,y,z) = 1$</li>
+<li>$p_X(x) = \sum\limits_{y}\sum\limits_{z}p_{X,Y,Y}(x,y,z)$</li>
 <li>$p_{X,Y}(x,y) = \sum\limits_{z}p_{X,Y,Y}(x,y,z)$
 <br><br></li>
 </ul>
@@ -18036,10 +18036,8 @@ width=300
 </ul>
 </li>
 <li>Expectation: $E[X] = \sum\limits_{k=0}^{n}kp_X(k) = \sum\limits_{k=0}^{n}k\binom{n}{k}p^k(1-p)^{n-k} \to$ hard to calculate!<ul>
-<li>Break $X$ into $X = X_1 + X_2+...+X_n$, where $X_i = 1$ if $i$'th trial is success, $X_i = 0$ otherwise
-<br><br></li>
-<li>Now, $E[X] = E[X_1]+...+E[X_n]$ by linearity of expecations
-<br><br></li>
+<li>Break $X$ into $X = X_1 + X_2+...+X_n$, where $X_i = 1$ if $i$'th trial is success, $X_i = 0$ otherwise</li>
+<li>Now, $E[X] = E[X_1]+...+E[X_n]$ by linearity of expecations</li>
 <li>Each indicator variable $X_i$ is Bernoulli variable with $E[X_i] = p$
 <br><br></li>
 </ul>
@@ -18049,30 +18047,23 @@ width=300
 </ul>
 <p><strong>Conditional PMFs Based on Other Random Variables:</strong> $A = \{Y=y\}$</p>
 <ul>
-<li>Already seen conditioning PMF of random variable $X$ on event A: $p_{X|A}(x|A) = P(X=x|A)$
-<br><br></li>
+<li>Already seen conditioning PMF of random variable $X$ on event A: $p_{X|A}(x|A) = P(X=x|A)$</li>
 <li>What if A is event that some other random variable takes a value? $\to A = \{Y=y\}$<ul>
 <li>$p_{X|Y}(x|y) = P(X=x|Y=y) = \frac{P(X=x\  \cap\  Y=y)}{P(Y=y)}$
 <br><br></li>
 </ul>
 </li>
 <li>This leads to definition of conditioning on another random variable: $\mathbf{p_{X|Y}(x|y) = \frac{p_{X|Y}(x,y)}{p_Y(y)}}$, defined for $y$ where $p_Y(y) &gt; 0$<ul>
-<li>Note that $\sum\limits_{x}P_{X|Y}(x|y) = 1$
-<br><br></li>
+<li>Note that $\sum\limits_{x}P_{X|Y}(x|y) = 1$</li>
 <li>Also leads to $p_{X|Y}(x,y) = p_Y(y)p_{X|Y}(x|y)$ and similarly, $p_{X|Y}(x,y) = p_X(x)p_{Y|X}(y|x)$
 <br><br></li>
 </ul>
 </li>
-<li>Similar forms for more than 2 random variables (can condition on one or more random variables)
-<br><br></li>
-<li>Previously:
-<br><br><ul>
-<li>Multiplication Rule: $P(A \cap B \cap C) = P(A)P(B|A)P(C|A \cap B)$
-<br><br></li>
-<li>Conditional Expecation: $E[X|A] = \sum\limits_{x}xp_{X|A}(x)$
-<br><br></li>
-<li>Expected Value Rule: $E[g(X)|A] = \sum\limits_{x}g(x)p_{X|A}(x)$
-<br><br></li>
+<li>Similar forms for more than 2 random variables (can condition on one or more random variables)</li>
+<li>Previously:<ul>
+<li>Multiplication Rule: $P(A \cap B \cap C) = P(A)P(B|A)P(C|A \cap B)$</li>
+<li>Conditional Expecation: $E[X|A] = \sum\limits_{x}xp_{X|A}(x)$</li>
+<li>Expected Value Rule: $E[g(X)|A] = \sum\limits_{x}g(x)p_{X|A}(x)$</li>
 <li>Total Probability Theorem: $p_X(x) = P(A_1)p_{X|A_1}(x)+...+P(A_n)p_{X|A_n}(x)$<ul>
 <li>Given that $\Omega$ partitioned into $A_1, A_2,...,A_n$
 <br><br></li>
@@ -18085,14 +18076,10 @@ width=300
 </li>
 </ul>
 </li>
-<li>Conditioning on $A = \{Y=y\}$
-<br><br><ul>
-<li>Multiplication Rule: if $A = \{X=x\}$, $B = \{Y=y\}$, $C = \{Z=z\} \to p_{X,Y,Z}(x,y,z) = p_X(x) p_{Y|X}(y|x)p_{Z|X,Y}(z|x,y)$
-<br><br></li>
-<li>Conditional Expectation: $E[X|Y=y] = \sum\limits_{x}xp_{X|Y}(x,y)$
-<br><br></li>
-<li>Expected Value Rule: $E[g(X)|Y=y] = \sum\limits_{x}g(x)p_{X|Y}(x|y)$
-<br><br></li>
+<li>Conditioning on $A = \{Y=y\}$<ul>
+<li>Multiplication Rule: if $A = \{X=x\}$, $B = \{Y=y\}$, $C = \{Z=z\} \to p_{X,Y,Z}(x,y,z) = p_X(x) p_{Y|X}(y|x)p_{Z|X,Y}(z|x,y)$</li>
+<li>Conditional Expectation: $E[X|Y=y] = \sum\limits_{x}xp_{X|Y}(x,y)$</li>
+<li>Expected Value Rule: $E[g(X)|Y=y] = \sum\limits_{x}g(x)p_{X|Y}(x|y)$</li>
 <li>Total Probability Theorem: $p_X(x) = \sum\limits_{y}p_Y(y)p_{X|Y}(x|y)$<ul>
 <li>Given that $\Omega$ partitioned into $A_1, A_2,...,A_n$, with $Y = \{y_1,...,y_n\}$ and $A_i = \{Y=y_i\}$ 
 <br><br></li>
@@ -18108,18 +18095,15 @@ width=300
 </ul>
 <p><strong>Independence of Random Variables:</strong></p>
 <ul>
-<li>Recall independence of 2 events: $P(A \cap B) = P(A)P(B)$ and $P(A|B) = P(A)$
-<br><br></li>
+<li>Recall independence of 2 events: $P(A \cap B) = P(A)P(B)$ and $P(A|B) = P(A)$</li>
 <li>Independence of a Random Variable and some event A: $P(X = x \cap A) = P(X=x)P(A)$ for all x<ul>
 <li>PMF of X does not change given A: $p_{X|A}(x) = p_X(x)$ for all x, and by symmetry $P(A|X=x) = P(A)$ for all x
 <br><br></li>
 </ul>
 </li>
 <li>For independence of Two Random Variables: $P(X = x \cap Y = y) = P(X=x) P(Y=y)$ for all $x, y$<ul>
-<li>Formally, $p_{X,Y}(x,y) = p_X(x)p_Y(y)$ for all $x,y$
-<br><br></li>
-<li>Can say $p_{X|Y}(x|y) = p_X(x)$ and $p_{Y|X}(y|x) = p_Y(y)$
-<br><br></li>
+<li>Formally, $p_{X,Y}(x,y) = p_X(x)p_Y(y)$ for all $x,y$</li>
+<li>Can say $p_{X|Y}(x|y) = p_X(x)$ and $p_{Y|X}(y|x) = p_Y(y)$</li>
 <li>Extends to $n$ random variables
 <br><br></li>
 </ul>
@@ -18127,8 +18111,7 @@ width=300
 </ul>
 <p><strong>Independence and Expectation:</strong></p>
 <ul>
-<li>If $X$ and $Y$ are independent: $E[XY] = E[X]E[Y]$
-<br><br></li>
+<li>If $X$ and $Y$ are independent: $E[XY] = E[X]E[Y]$</li>
 <li>Additionally, if $g(X)$ and $h(Y)$ are also independent: $E[g(X)h(Y)] = E[g(X)]E[h(Y)]$<ul>
 <li>Can prove these with Expected Value Rule for Joint PMFs
 <br><br></li>
@@ -18137,20 +18120,17 @@ width=300
 </ul>
 <p><strong>Independence and Variance:</strong></p>
 <ul>
-<li>Recall that $var(aX) = a^2var(X)$ and $var(X+a) = var(X)$, and these are always true
-<br><br></li>
+<li>Recall that $var(aX) = a^2var(X)$ and $var(X+a) = var(X)$, and these are always true</li>
 <li>If $X$ and $Y$ independent, $\mathbf{var(X+Y) = var(X) + var(Y)} \to$ NOT true generally
 <br><br></li>
 </ul>
 <p><strong>Variance of Binomial Random Variable:</strong> $X$: number of successes in $n$ independant trials with $P(success) = p$</p>
 <ul>
-<li>Break $X$ into $X = X_1 + X_2+...+X_n$, where $X_i = 1$ if $i$'th trial is success, $X_i = 0$ otherwise
+<li>Break $X$ into $X = X_1 + X_2+...+X_n$, where $X_i = 1$ if $i$'th trial is success, $X_i = 0$ otherwise</li>
+<li>Now, $var(X) = var(X_1)+...+var(X_n) = n*var(X_i)$ by independence of indicator variables $X_i$</li>
+<li>Each indicator variable $X_i$ is Bernoulli variable with $var(X_i) = p(1=p)$</li>
+<li>As such, $\mathbf{var(X) = np(1-p)}$
 <br><br></li>
-<li>Now, $var(X) = var(X_1)+...+var(X_n) = n*var(X_i)$ by independence of indicator variables $X_i$
-<br><br></li>
-<li>Each indicator variable $X_i$ is Bernoulli variable with $var(X_i) = p(1=p)$
-<br><br></li>
-<li>As such, $\mathbf{var(X) = np(1-p)}$</li>
 </ul>
 
 </div>
@@ -18651,8 +18631,7 @@ width=600
 </li>
 <li><p>Z is new random variable $\to p_Z(z) = ?$</p>
 <ul>
-<li>Possible vales of Z: $Z = \{9, 4, 1\}$
-<br><br></li>
+<li>Possible vales of Z: $Z = \{9, 4, 1\}$</li>
 <li>Z takes on value of 1 when X = 1 and -1: $\{Z = 1\} = \{X = 1\} \cup \{X = -1\} = \frac{1}{a} + \frac{1}{a} = \frac{2}{a}$</li>
 <li>Similar argument for 4 and 9: $p_Z(4) = \frac{8}{a}$ and $p_Z(9) = \frac{18}{a}$ where again, $a = 28$</li>
 <li>Specify that $p_Z(z) = 0$ otherwise
@@ -18675,7 +18654,7 @@ width=600
 </ul>
 </li>
 </ol>
-<p>**#3:</p>
+<p><strong>#3: From tail probabilities to expectations:</strong></p>
 
 </div>
 </div>
@@ -19530,13 +19509,10 @@ width=900
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>$X: $ non negative integer values<ul>
+<h1 id="1.-$X:-$-non-negative-integer-values">1. $X: $ non negative integer values<a class="anchor-link" href="#1.-$X:-$-non-negative-integer-values">&#182;</a></h1><ul>
 <li>$E[X] = \sum\limits_{k = -\infty}^\infty k p_X(k) = \sum\limits_{k = 1}^\infty k p_X(k)$ </li>
 <li>$\sum\limits_{k = 1}^\infty P(X \geq k) = \sum\limits_{k = 1}^\infty \sum\limits_{i = k}^\infty p_X(i) = \sum\limits_{i = 1}^\infty \sum\limits_{k = 1}^i p_X(i) \to$ sneaky exchange of summations!</li>
 </ul>
-</li>
-</ol>
 
 </div>
 </div>
@@ -20109,8 +20085,7 @@ width=300
 <li>$\sum\limits_{i = 1}^\infty \sum\limits_{k = 1}^i p_X(i) = \sum\limits_{i = 1}^\infty i p_X(i) \to$ this is $E[X]$
 <br><br></li>
 </ul>
-<ol>
-<li>$b \geq a \geq 0 \to$ a and b are integers, so the above formula applies<ul>
+<h1 id="2.-$b-\geq-a-\geq-0-\to$-a-and-b-are-integers,-so-the-above-formula-applies">2. $b \geq a \geq 0 \to$ a and b are integers, so the above formula applies<a class="anchor-link" href="#2.-$b-\geq-a-\geq-0-\to$-a-and-b-are-integers,-so-the-above-formula-applies">&#182;</a></h1><ul>
 <li>$P(Y \geq k) = ?$<ul>
 <li>When $k \leq a \to P(Y \geq k) = 1$</li>
 <li>When $k &gt; b \to P(Y \geq k) = 0$</li>
@@ -20124,8 +20099,6 @@ width=300
 </ul>
 </li>
 </ul>
-</li>
-</ol>
 <p><strong>#4: Coupon collector problem. A particular professor is known for his arbitrary grading policies. Each paper receives a grade from the set {A,A−,B+,B,B−,C+}, with equal probability, independently of other papers. How many papers do you expect to hand in before you receive each possible grade at least once?</strong></p>
 <ul>
 <li>Set of $k$ "coupons", where in this case, $k = 6$ (number of grades)</li>
@@ -20487,22 +20460,20 @@ width=900
 <li><p>Here, we condition a geometric distribution on another independent geometric distribution and arrive at a uniform PMF (dependent only on the sum of the outcomes of the distributions). To make this intuitive, imagine two friends flipping coins. The first takes only 1 flip to get heads (X = 1), and the second takes 9 flips (Y = 9). This means n = 10. Because X = 1 is relatively likely and Y = 9 is relatively unlikely, they "cancel" the effect of one another. So as long as the two friends sum to 10, the probability that it took the first friend i flips to get heads is uniform on $i = 1, 2,..., n-1$
 <br><br></p>
 </li>
-<li><p>Recall for geometric distribution (number of indpendent trials until success occurs): $p_X(k) = (1 - p)^{k - 1}p$
-<br><br></p>
+<li><p>Recall for geometric distribution (number of indpendent trials until success occurs): $p_X(k) = (1 - p)^{k - 1}p$</p>
 </li>
-<li><p>Conditioning the expression: $P(X = i | X + Y = n) = \frac{P(X = i) \cap P(X + Y = n)}{P(X + Y = n)}$
-<br><br></p>
+<li><p>Conditioning the expression: $P(X = i | X + Y = n) = \frac{P(X = i) \cap P(X + Y = n)}{P(X + Y = n)}$</p>
 </li>
-<li><p>Numerator: note independence of X and Y:
+<li><p>Numerator: note independence of X and Y:</p>
+</li>
+</ul>
 \begin{align}
-P(X = i) \cap P(X + Y = n) &amp;= P(X = i) \cap P(Y = n - i) \
-&amp;= P(X=i) \bullet P(Y = n-i)\
-&amp;= (1 - p)^{i - 1}p \bullet (1 - p)^{n - i - 1}p \
+P(X = i) \cap P(X + Y = n) &amp;= P(X = i) \cap P(Y = n - i) \\
+&amp;= P(X=i) \bullet P(Y = n-i) \\
+&amp;= (1 - p)^{i - 1}p \bullet (1 - p)^{n - i - 1}p \\
 &amp;= (1 - p)^{n - 2}p^2
-\end{align}</p>
-</li>
-<li><p>Denominator: use Total Probability Theorem</p>
-</li>
+\end{align}<ul>
+<li>Denominator: use Total Probability Theorem  </li>
 </ul>
 \begin{align}
 P(X + Y = n) &amp;= \sum\limits_{k = 1}^{n - 1}P(X = k)P(X + Y = n | X = k) \\
@@ -22800,7 +22771,7 @@ width=900
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[NbConvertApp] Converting notebook Unit_04.ipynb to html
-[NbConvertApp] Writing 1043416 bytes to Unit_04.html
+[NbConvertApp] Writing 1043418 bytes to Unit_04.html
 </pre>
 </div>
 </div>
