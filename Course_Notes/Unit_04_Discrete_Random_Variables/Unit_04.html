@@ -20493,25 +20493,49 @@ width=900
 <li><p>Conditioning the expression: $P(X = i | X + Y = n) = \frac{P(X = i) \cap P(X + Y = n)}{P(X + Y = n)}$
 <br><br></p>
 </li>
-<li><p>Numerator: $P(X = i) \cap P(X + Y = n) = P(X = i) \cap P(Y = n - i) = P(X=i)* P(Y = n-i)$ because X and Y independent</p>
-<ul>
-<li>$P(X=i)* P(Y = n-i) = (1 - p)^{i - 1}p * (1 - p)^{n - i - 1}p = (1 - p)^{n - 2}p^2$
-<br><br></li>
-</ul>
+<li><p>Numerator: 
+\begin{align}
+P(X = i) \cap P(X + Y = n) &amp;= P(X = i) \cap P(Y = n - i) \
+&amp;= P(X=i)<em> P(Y = n-i)\ because\ X\ and\ Y\ independent \
+&amp;= (1 - p)^{i - 1}p </em> (1 - p)^{n - i - 1}p \
+&amp;= (1 - p)^{n - 2}p^2
+\end{align}</p>
 </li>
-<li><p>Denominator: use Total Probability Theorem $\to P(X + Y = n) = \sum\limits_{k = 1}^{n - 1}P(X = k)P(X + Y = n | X = k) = \sum\limits_{k = 1}^{n - 1}(1 - p)^{k - 1}p P(Y = n - k) = \sum\limits_{k = 1}^{n - 1}(1 - p)^{k - 1}p (1 - p)^{n - k - 1}p = \sum\limits_{k = 1}^{n - 1}(1 - p)^{n - 2}p^2$</p>
-<ul>
+<li><p>Denominator: use Total Probability Theorem</p>
+</li>
+</ul>
+\begin{align}
+P(X + Y = n) &amp;= \sum\limits_{k = 1}^{n - 1}P(X = k)P(X + Y = n | X = k) \\
+&amp;= \sum\limits_{k = 1}^{n - 1}(1 - p)^{k - 1}p P(Y = n - k) \\
+&amp;= \sum\limits_{k = 1}^{n - 1}(1 - p)^{k - 1}p (1 - p)^{n - k - 1}p \\
+&amp;= \sum\limits_{k = 1}^{n - 1}(1 - p)^{n - 2}p^2
+\end{align}<ul>
 <li>Note: could remove conditioning because X and Y are independent
 <br><br></li>
 <li>Because sum does not depend on $k$, just making copies: $\sum\limits_{k = 1}^{n - 1}(1 - p)^{n - 2}p^2 = (n-1)(1 - p)^{n - 2}p^2$
 <br><br></li>
 </ul>
-</li>
-<li><p>Finally, $P(X = i | X + Y = n) = \frac{1}{n-1}$ cancelling everything out
-<br><br></p>
-</li>
+<ul>
+<li>Finally, $P(X = i | X + Y = n) = \frac{1}{n-1}$ cancelling everything out
+<br><br></li>
 </ul>
 <p><strong>#6: Joint PMF Drill 1:</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tes
+\begin{align}
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \
+\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \
+\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0
+\end{vmatrix}
+\end{align}</p>
 
 </div>
 </div>
@@ -21482,7 +21506,7 @@ width=700
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[NbConvertApp] Converting notebook Unit_04.ipynb to html
-[NbConvertApp] Writing 707315 bytes to Unit_04.html
+[NbConvertApp] Writing 945907 bytes to Unit_04.html
 </pre>
 </div>
 </div>
