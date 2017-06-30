@@ -11788,6 +11788,10 @@ div#notebook {
 .output {
     align-items: center;
 }
+
+.text_cell_render { /* Customize text cells */
+line-height:2.5em;
+}
 </style>
 </div>
 
@@ -11822,78 +11826,81 @@ div#notebook {
 <li><strong>Basic Counting Principal:</strong><ul>
 <li>$r$ stages (e.g. shirts, ties, jackets $\to r = 3$</li>
 <li>$n_i$ choices at stage $i$<ul>
-<li>Number of choices $= n_1 n_2 ... n_r$</li>
+<li>Number of choices $= n_1 n_2 ... n_r$
+<br><br></li>
 </ul>
 </li>
 <li>E.g. license plate, 2 letters then 3 digits: $NumPlates = 26*26*10*10*10$<ul>
-<li>W/o repitition: $NumPlates = 26*25*10*9*8$  </li>
+<li>W/o repitition: $NumPlates = 26*25*10*9*8$
+<br><br></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <ul>
-<li><strong>Permutations:</strong> ordered combinations (number of ways of ordering n elements)<ul>
+<li><p><strong>Permutations:</strong> ordered combinations (number of ways of ordering n elements)</p>
+<ul>
 <li>$NumPerms = n(n-1)(n-2)...(1) = n!$<ul>
-<li>Note: If choosing k elements of set of n and want permutations: $NumPerms_{subset}=\frac{n!}{(n-k)!}$</li>
+<li>Note: If choosing k elements of set of n and want permutations: $NumPerms_{subset}=\frac{n!}{(n-k)!}$
+<br><br></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p><strong>Number of Subsets of {1,...,n}:</strong></p>
 <ul>
-<li><p>n in basic counting principal is 2: either put in subset or don't. Number of stages r is number of items in set (r = n)</p>
-<ul>
+<li>n in basic counting principal is 2: either put in subset or don't. Number of stages r is number of items in set (r = n)  <ul>
 <li>$NumSubsets = 2^n$<ul>
-<li>E.g. $\{1\}$ consists of $2^1$ subsets: $\{1\}$ and $\emptyset$  </li>
+<li>E.g. $\{1\}$ consists of $2^1$ subsets: $\{1\}$ and $\emptyset$<br>
+<br></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p><strong>Combinations:</strong> given set of $n$ elements, how many combinations of $k \geq 0$ elements $\to$ "how many ways to choose k elements from pool of n"</p>
 <ul>
 <li><p>$NumCombinations = \binom{n}{k} = $ <strong>number of k-element subsets of given n-element set</strong> (number of unordered k-length subsets)</p>
 <ul>
-<li>Note: $\binom{n}{k}$ is <strong>Binomial Coefficient</strong></li>
+<li>Note: $\binom{n}{k}$ is <strong>Binomial Coefficient</strong>
+<br><br></li>
 </ul>
 </li>
 <li><p>Two ways of constructing ordered list of k distinct items:</p>
 <ol>
 <li>Choose k items one at a time: $n(n-1)(n-2)...(n-(k-1)) = n(n-1)(n-2)...(n-k+1) = \frac{n!}{(n-k)!}$</li>
-<li>Choose k items, then order them: $\binom{n}{k}$ subsets times $k!$ permutations $= \binom{n}{k}k!$  </li>
+<li>Choose k items, then order them: $\binom{n}{k}$ subsets times $k!$ permutations $= \binom{n}{k}k!$<br>
+<br></li>
 </ol>
 </li>
-<li><p>Set 1. = 2., get $\mathbf{\binom{n}{k} = \frac{n!}{k!(n-k)!}}$</p>
-<ul>
+<li>Set 1. = 2., get $\mathbf{\binom{n}{k} = \frac{n!}{k!(n-k)!}}$<ul>
 <li>Valid for $n \geq 0$ and $0 \leq k \leq n$</li>
 <li>Like taking $NumPerms_{subset}$ and dividing by number of permutations of k elements $k!$ because order doesn't matter  <ul>
-<li>Note: $\sum\limits_{k=0}^{n}\binom{n}{k} =$ number of ALL subsets $= 2^n$  </li>
+<li>Note: $\sum\limits_{k=0}^{n}\binom{n}{k} =$ number of ALL subsets $= 2^n$<br>
+<br></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
+<li><p><strong>Binomial Probabilities:</strong></p>
 <ul>
-<li><strong>Binomial Probabilities:</strong><ul>
 <li>Given $n \geq 1$ independant events, where $P(+) = p$ and as such, $P(-) = 1-p$<ul>
 <li>e.g.: $P(+--+++) = P(+)P(-)P(-)P(+)P(+)P(+)$ because of independance. Therefore, $P(+--++) = p^4(1-p)^2$</li>
 <li>So generally for a given sequence of +'s and -'s with <strong>k +'s of n total events</strong>, $P(sequence) = p^k(1-p)^{n-k}$</li>
 <li>As such, probability of <strong>k +'s</strong>: $P(k_{+'s}) = p^k(1-p)^{n-k} *$ total number of sequences with k +'s<ul>
 <li>Total number of sequences with k +'s: $\binom{n}{k} \to$ of n events, choose k of them that are +'s<ul>
-<li>Best way to think of this: n slots corresponding to + or - outcomes. Decide k of these slots are +'s. Then find all the ways of choosing k slots, then saying "these slots are +'s, the rest are -'s". This is the same as $\binom{n}{k}$</li>
+<li>Best way to think of this: n slots corresponding to + or - outcomes. Decide k of these slots are +'s. Then find all the ways of choosing k slots, then saying "these slots are +'s, the rest are -'s". This is the same as $\binom{n}{k}$
+<br><br></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Putting it together, $\mathbf{P(k_{+'s}) = \binom{n}{k}p^k(1-p)^{n-k}}$  </li>
+<li>Putting it together, $\mathbf{P(k_{+'s}) = \binom{n}{k}p^k(1-p)^{n-k}}$<br>
+<br></li>
 </ul>
 </li>
 </ul>
